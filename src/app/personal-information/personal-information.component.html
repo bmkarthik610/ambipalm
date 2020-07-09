@@ -1,0 +1,227 @@
+<form [formGroup]="type" action="" method="">
+                 
+  <div class="tab-pane " id="personalinformationinner" *ngIf="pitab">
+ 
+  <div class="row justify-content-center">
+    <div class="col-sm-4">
+      <div class="picture-container">
+        <div class="picture">
+          <img src="./assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
+          <input type="file" id="wizard-picture">
+        </div>
+        <h6 class="description">Choose Picture</h6>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="material-icons">face</i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'firstName')">
+          <input type="text"
+          name="firstName"
+          matInput
+          
+          placeholder="First Name"
+          formControlName="firstName">
+        </mat-form-field>
+      </div>
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="material-icons">record_voice_over</i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'lastName')">
+          <input type="text"
+          name="lastname"
+          matInput
+          
+          placeholder="last Name"
+          formControlName="lastName">
+        </mat-form-field>
+     
+      </div>
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="material-icons">record_voice_over</i>
+          </span>
+        </div>
+        <mat-form-field>
+          <mat-select placeholder="Age" name="age">
+            <mat-option *ngFor="let age of ageList" [value]="age.value">
+              {{ age.viewValue }}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+     
+      </div>
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <!-- <i class="material-icons">record_voice_over</i> -->
+          </span>
+        </div>
+        <mat-radio-group aria-label="Select an option" formControlName="gender">
+          <mat-radio-button value="Male" >Male</mat-radio-button>&nbsp;
+          <mat-radio-button value="Female"> Female</mat-radio-button>
+        </mat-radio-group>
+     
+      </div>
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'email')">
+          <input type="text"
+          name="email"
+          matInput
+          
+          placeholder="Email"
+          formControlName="email">
+        </mat-form-field>
+       
+      </div>
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+        <mat-form-field>
+          <mat-select placeholder="Blood group" name="bloodgroup" formControlName="bloodgroup">
+            <mat-option *ngFor="let bloodgroup of bloodGroups" [value]="bloodgroup.value">
+              {{ bloodgroup.viewValue }}
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+     
+       
+      </div>
+
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-phone-square" aria-hidden="true"></i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'phoneNumber')">
+          <input type="number"
+          name="phoneNumber"
+          matInput
+          
+          placeholder="Phone Number"
+          formControlName="phoneNumber">
+        </mat-form-field>
+       
+      </div>
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-address-book" aria-hidden="true"></i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'perminentAddress')">
+          <input type="text"
+          name="perminentAddress"
+          matInput
+          
+          placeholder="Perminent Address"
+          formControlName="perminentAddress">
+        </mat-form-field>
+       
+      </div>
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-address-book" aria-hidden="true"></i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'presentAddress')">
+          <input   #addresstext type="text"
+          name="presentAddress"
+          matInput
+          
+          placeholder="Present Address"
+          formControlName="presentAddress">
+        </mat-form-field>
+       
+      </div>
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-id-card" aria-hidden="true"></i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'idProofNumber')">
+          <input type="text"
+          name="idProofNumber"
+          matInput
+          
+          placeholder="Id Proof Number"
+          formControlName="idProofNumber">
+        </mat-form-field>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tab-pane" id="idproofs" *ngIf="idproof">
+  <div class="card-body  col-md-6 text-center ml-auto mr-auto">
+    <h3>ID Proofs</h3>
+    <p>ID Proofs to prove it's really you !</p>
+    
+<button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isPersonalInformation, 'btn-rose': !isPersonalInformation}"   >
+<div class="row">
+<div class="col-md-3">PAN card</div><div class="col-md-5"></div> <div class="col-md-3">Complete  &nbsp; &nbsp;<i class="fa fa-file" aria-hidden="true"></i></div> </div></button>
+<button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isPersonalInformation, 'btn-rose': !isPersonalInformation}">
+<div class="row">
+<div class="col-md-3">Address Proof</div><div class="col-md-5"></div> <div class="col-md-3">Pending &nbsp; &nbsp; <i class="fa fa-file" aria-hidden="true"></i></div> </div></button>  
+</div>
+</div>
+  
+
+
+ 
+   <div class="row">
+  
+    <div class="col-md-3">
+    </div>
+     <div class="col-md-3">
+      &nbsp;
+        <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : !pitab, 'btn-rose': pitab}"  (click)="selectInnerTab('pitab')"> Personal Information</button>
+      
+      </div>
+      <div class="col-md-3">
+     
+        &nbsp;
+          <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : !idproof, 'btn-rose': idproof}"  (click)="selectInnerTab('idproof')">   ID Proofs</button>
+      </div>
+        </div>
+       
+        <!-- <a class="nav-link" href="#idproofs" data-toggle="tab" (click)="selectInnerTab('idproof')" role="tab">
+      
+        </a>
+      </li> -->
+      
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#address" data-toggle="tab" role="tab">
+          Vehicle Information
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#address" data-toggle="tab" role="tab">
+        Driver Information
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#address" data-toggle="tab" role="tab">
+       Other Users
+        </a>
+      </li> -->
+</form> 

@@ -1,0 +1,98 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 mr-auto ml-auto">
+        <!--      Wizard container        -->
+        <div class="wizard-container">
+          <div class="card card-wizard" data-color="rose" id="wizardProfile">
+              <!--        You can switch " data-color="primary" "  with one of the next bright colors: "green", "orange", "red", "blue"       -->
+              <div class="card-header text-center">
+                <h3 class="card-title">
+                  Welcome
+                </h3>
+                <h5 class="card-description">Service Provider Signup</h5>
+              </div>
+              <div class="wizard-navigation">
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a class="nav-link " href="#personalinformation" data-toggle="tab" role="tab">
+                     Personal Information
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#companyinformation" data-toggle="tab" role="tab">
+                     Company Information
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#vehicleinformation" data-toggle="tab" role="tab">
+                      Vehicle Information
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#driverinformation" data-toggle="tab" role="tab">
+                    Driver Information
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#otherusers" data-toggle="tab" role="tab">
+                   Other Users
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#terms" data-toggle="tab" role="tab">
+                  Terms and Conditions
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="tab-pane " id="personalinformation">
+                    
+                    <app-personal-information></app-personal-information>
+          
+                  </div>
+                  <div class="tab-pane" id="companyinformation">
+  
+  <app-company-information></app-company-information>
+                  </div>
+                  <div class="tab-pane" id="vehicleinformation">
+                   
+                <app-vehicle-information></app-vehicle-information>
+                  </div>
+                  <div class="tab-pane" id="driverinformation">
+                   
+                    <app-driver-information></app-driver-information>
+
+                      </div>
+                  <div class="tab-pane" id="terms">
+  
+                    <app-terms-conditions></app-terms-conditions>
+                                    </div>
+                                    <div class="tab-pane active" id="otherusers">
+  <app-ambulance-type></app-ambulance-type>
+                                                      </div>
+                </div>
+                
+              </div>
+              <div class="card-footer">
+                <div class="mr-auto">
+                  <input type="button" class="btn btn-previous btn-fill btn-default btn-wd disabled" name="previous" value="Previous">
+                </div>
+                <div class="ml-auto">
+                  <input type="button" class="btn btn-next btn-fill btn-rose btn-wd" name="next" value="Next">
+                  <input type="button" class="btn btn-finish btn-fill btn-rose btn-wd" name="finish" value="Finish" style="display: none;">
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            <!-- </form>
+               -->
+    
+          </div>
+        </div>
+        <!-- wizard container -->
+      </div>
+    </div>
+  </div>
+</div>

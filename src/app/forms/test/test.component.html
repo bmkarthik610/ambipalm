@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="save()" (reset)="resetForm()">
+<ng-multiselect-dropdown
+  [placeholder]="'custom placeholder'"
+  [settings]="dropdownSettings"
+  [data]="dropdownList"
+ 
+  
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+>
+</ng-multiselect-dropdown>
+</form>

@@ -1,0 +1,152 @@
+<form [formGroup]="companyInformation" action="" method="">
+                 
+  <div class="tab-pane " id="personalinformationinner" *ngIf="pitab">
+  <div class="row justify-content-center">
+    <div class="col-sm-4">
+      <div class="picture-container">
+        <div class="picture">
+          <img src="./assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
+          <input type="file" id="wizard-picture">
+        </div>
+        <h6 class="description">Choose Picture</h6>
+      </div>
+    </div>
+    <div class="col-sm-6">
+    <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-building" aria-hidden="true"></i>
+          </span>
+        </div>
+       <mat-form-field class="example-full-width has-label" >
+          <input type="text"
+          name="companyName"
+          matInput
+          
+          placeholder="Company Name"
+          formControlName="companyName">
+        </mat-form-field>
+      </div>
+       
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="material-icons">record_voice_over</i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" >
+          <input type="text"
+          name="date"
+          matInput
+          
+          placeholder="Year of Establishement"
+          formControlName="date">
+        </mat-form-field>
+     
+      </div>
+
+
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" >
+          <input type="text"
+          name="email"
+          matInput
+          
+          placeholder="Email"
+          formControlName="email">
+        </mat-form-field>
+       
+      </div>
+     
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-phone-square" aria-hidden="true"></i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" >
+          <input type="number"
+          name="phoneNumber"
+          matInput
+          
+          placeholder="Phone Number"
+          formControlName="phoneNumber">
+        </mat-form-field>
+       
+      </div>
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-address-book" aria-hidden="true"></i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" >
+          <input type="text"
+          name="Address"
+          matInput
+          
+          placeholder="Address"
+          formControlName="Address">
+        </mat-form-field>
+       
+      </div>
+   
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-id-card" aria-hidden="true"></i>
+          </span>
+        </div>
+        <mat-form-field class="example-full-width has-label" >
+          <input type="text"
+          name="registrationNumber"
+          matInput
+          
+          placeholder="Registration Number"
+          formControlName="registrationNumber">
+        </mat-form-field>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tab-pane" id="idproofs" *ngIf="idproof">
+  <div class="card-body  col-md-6 text-center ml-auto mr-auto">
+    <h3>ID Proofs</h3>
+    <p>ID Proofs to prove it's really you !</p>
+    
+<button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isPersonalInformation, 'btn-rose': !isPersonalInformation}"   >
+<div class="row">
+<div class="col-md-3">Registration Certificate</div><div class="col-md-5"></div> <div class="col-md-3">Complete  &nbsp; &nbsp;<i class="fa fa-file" aria-hidden="true"></i></div> </div></button>
+<button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isPersonalInformation, 'btn-rose': !isPersonalInformation}">
+<div class="row">
+<div class="col-md-3">Company PAN/TAN</div><div class="col-md-5"></div> <div class="col-md-3">Pending &nbsp; &nbsp; <i class="fa fa-file" aria-hidden="true"></i></div> </div></button>  
+</div>
+</div>
+  
+
+
+ 
+   <div class="row">
+  
+    <div class="col-md-3">
+    </div>
+     <div class="col-md-3">
+      &nbsp;
+        <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : !pitab, 'btn-rose': pitab}"  (click)="selectInnerTab('pitab')"> Company Information</button>
+      
+      </div>
+      <div class="col-md-3">
+     
+        &nbsp;
+          <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : !idproof, 'btn-rose': idproof}"  (click)="selectInnerTab('idproof')">   ID Proofs</button>
+      </div>
+        </div>
+       
+   
+</form> 

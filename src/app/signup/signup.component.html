@@ -1,0 +1,52 @@
+<!-- <div>
+    <div class="main-content >
+        <div class="container-fluid">
+
+
+  
+</div>
+</div>
+</div> -->
+
+<div class="main-content  " style="background-color: #bc2838;">
+    <div class="container-fluid">
+        <div class="col-md-4 ml-auto mr-auto" style="background-color: #ffffff;border-radius: 15px;">
+        <div class="card-body ">
+            <div class="fileinput fileinput-new text-center col-md-12" data-provides="fileinput" >
+                <div class="fileinput-new thumbnail img-circle">
+                    <img src="./assets/img/default-avatar.png" alt="...">
+                </div>
+                <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
+                <div>
+                    <span class="btn btn-round btn-rose btn-file">
+                        <span class="fileinput-new">Add Photo</span>
+                        <span class="fileinput-exists">Change</span>
+                        <input type="file" name="..." />
+                    </span>
+                    <br />
+                    <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+          <!-- <h3></h3> -->
+          <p>Few steps are you are all steps to go</p>
+
+          
+            <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isPersonalInformation, 'btn-rose': !isPersonalInformation}"  (click)="isPersonalInformation = !isPersonalInformation"  [routerLink]="['/pages/personalinformation']"> Personal Information</button>
+            <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isCompanyInformation, 'btn-rose': !isCompanyInformation}"(click)="isCompanyInformation = !isCompanyInformation" [routerLink]="['/pages/companyinformation']">Company Information</button>
+            <button mat-raised-button class="btn  btn-round col-md-12"[ngClass]="{'btn-white' : isVehicleInformation, 'btn-rose': !isVehicleInformation}" (click)="isVehicleInformation = !isVehicleInformation" [routerLink]="['/pages/vehicleinformation']">Vehicle  Information</button>
+            <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isDriverInformation, 'btn-rose': !isDriverInformation}"(click)="isDriverInformation = !isDriverInformation">Driver Information</button>
+            <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isOther, 'btn-rose': !isOther}"(click)="isOther = !isOther">Other Users</button>
+            <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isTerms, 'btn-rose': !isTerms}"(click)="isTerms = !isTerms" [routerLink]="['/pages/terms&conditions']">Terms & Conditions</button>
+            
+        </div>
+      
+      </div>
+      </div>
+      <!--  end card -->
+    </div>
+  </div>
+
+
+  
+  
