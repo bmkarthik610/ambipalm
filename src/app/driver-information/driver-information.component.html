@@ -154,16 +154,92 @@
     </form>
 </div>
 <div class="tab-pane" id="idproofs" *ngIf="idproof">
-  <div class="card-body  col-md-6 text-center ml-auto mr-auto">
-    <h3>ID Proofs</h3>
-    <p>ID Proofs to prove it's really you !</p>
+  <div class="card-body">
+    <div class="row  col-md-6 text-center ml-auto mr-auto">
+    <legend>ID Proofs</legend>
+    <legend>ID Proofs to prove it's really you !</legend>
+    <legend>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+      
+    </legend>
     
-<button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isPersonalInformation, 'btn-rose': !isPersonalInformation}"   >
+  </div>
+
+    <div class="row mt-2">
+      <div class="col-md-4 col-sm-4">
+          <legend>Address Proof front</legend>
+    
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="row">
+   <input type="file" [(ngModel)]="filetext" (click)="enable  = true" />
+  </div>
+  <div class="row" *ngIf="filetext">
+   <a href="#">{{filetext}} </a> 
+   <button class="btn btn-rose" >Upload</button>
+   <button class="btn btn-danger" (click)="filetext = ''">remove</button> </div>
+    </div>
+    
+  </div>  
+  
+  <div class="row mt-5">
+    <div class="col-md-4 col-sm-4">
+        <legend>Address Proof back</legend>
+  
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <div class="row">
+ <input type="file" [(ngModel)]="filetextback" (click)="enable  = true" />
+</div>
+<div class="row" *ngIf="filetextback">
+  <div>
+ <a href="#" class="mt-2">{{filetextback}} </a> </div>
+ <button class="btn btn-rose" >Upload</button>
+ <button class="btn btn-danger" (click)="filetextback = ''">remove</button> </div>
+  </div>
+  
+</div> 
+
+<div class="row mt-5">
+  <div class="col-md-4 col-sm-4">
+      <legend>Driver License</legend>
+
+  </div>
+  <div class="col-md-6 col-sm-6">
+    <div class="row">
+<input type="file" [(ngModel)]="licennce" (click)="enable  = true" />
+</div>
+<div class="row" *ngIf="licennce">
+<div>
+<a href="#" class="mt-2">{{filelicenncetextback}} </a> </div>
+<button class="btn btn-rose" >Upload</button>
+<button class="btn btn-danger" (click)="licennce = ''">remove</button> </div>
+</div>
+
+</div> 
+<div class="row mt-5">
+  <div class="col-md-4 col-sm-4">
+      <legend>Police Clearance Certificate</legend>
+
+  </div>
+  <div class="col-md-6 col-sm-6">
+    <div class="row">
+<input type="file" [(ngModel)]="police" (click)="enable  = true" />
+</div>
+<div class="row" *ngIf="police">
+<div>
+<a href="#" class="mt-2">{{police}} </a> </div>
+<button class="btn btn-rose" >Upload</button>
+<button class="btn btn-danger" (click)="police = ''">remove</button> </div>
+</div>
+
+</div> 
+<!-- <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isPersonalInformation, 'btn-rose': !isPersonalInformation}"   >
 <div class="row">
 <div class="col-md-3">PAN card</div><div class="col-md-5"></div> <div class="col-md-3">Complete  &nbsp; &nbsp;<i class="fa fa-file" aria-hidden="true"></i></div> </div></button>
 <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isPersonalInformation, 'btn-rose': !isPersonalInformation}">
 <div class="row">
-<div class="col-md-3">Address Proof</div><div class="col-md-5"></div> <div class="col-md-3">Pending &nbsp; &nbsp; <i class="fa fa-file" aria-hidden="true"></i></div> </div></button>  
+<div class="col-md-3">Address Proof</div><div class="col-md-5"></div> <div class="col-md-3">Pending &nbsp; &nbsp; <i class="fa fa-file" aria-hidden="true"></i></div> </div></button>   -->
 </div>
 </div>
   

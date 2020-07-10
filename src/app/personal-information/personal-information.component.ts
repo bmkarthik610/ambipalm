@@ -157,6 +157,8 @@ export class PersonalInformationComponent implements OnInit, OnChanges {
    type : FormGroup;
     pitab: boolean = true;
     idproof: boolean;
+    filetext = "";
+   
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -171,6 +173,9 @@ export class PersonalInformationComponent implements OnInit, OnChanges {
     };
   }
     ngOnInit() {
+
+   
+  
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
   
 
