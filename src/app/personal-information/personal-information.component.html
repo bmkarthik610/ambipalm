@@ -51,7 +51,7 @@
           </span>
         </div>
         <mat-form-field>
-          <mat-select placeholder="Age" name="age">
+          <mat-select placeholder="Age" name="age" formControlName="age">
             <mat-option *ngFor="let age of ageList" [value]="age.value">
               {{ age.viewValue }}
             </mat-option>
@@ -65,6 +65,7 @@
             <!-- <i class="material-icons">record_voice_over</i> -->
           </span>
         </div>
+        
         <mat-radio-group aria-label="Select an option" formControlName="gender">
           <mat-radio-button value="Male" >Male</mat-radio-button>&nbsp;
           <mat-radio-button value="Female"> Female</mat-radio-button>
@@ -126,14 +127,8 @@
             <i class="fa fa-address-book" aria-hidden="true"></i>
           </span>
         </div>
-        <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'perminentAddress')">
-          <input type="text"
-          name="perminentAddress"
-          matInput
-          
-          placeholder="Perminent Address"
-          formControlName="perminentAddress">
-        </mat-form-field>
+        <app-google-autocomplete (setAddress)="getPerminentAddress($event)" class="col-md-10" 
+        placeHolder="Perminent Address" addressText="{{ fromAddress }}"></app-google-autocomplete>
        
       </div>
       <div class="input-group form-control-lg">
@@ -142,15 +137,10 @@
             <i class="fa fa-address-book" aria-hidden="true"></i>
           </span>
         </div>
-        <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'presentAddress')">
-          <input   #addresstext type="text"
-          name="presentAddress"
-          matInput
-          
-          placeholder="Present Address"
-          formControlName="presentAddress">
-        </mat-form-field>
-       
+
+        
+        <app-google-autocomplete (setAddress)="getPresentAddress($event)" class="col-md-10"
+        placeHolder="Present Address" addressText="{{ fromAddress }}"></app-google-autocomplete>
       </div>
       <div class="input-group form-control-lg">
         <div class="input-group-prepend">

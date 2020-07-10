@@ -178,4 +178,12 @@ this.idproof =true;
 this.pitab =false;
       }
   }
+  getPresentAddress(place: google.maps.places.PlaceResult) {
+    this.driverInformation.patchValue({ 'presentAddress':place.formatted_address })
+  }
+  getPerminentAddress(place :google.maps.places.PlaceResult)
+  {
+    // console.log(place.formatted_address);
+    this.driverInformation.patchValue({ 'perminentAddress':place.formatted_address })
+  }
 }

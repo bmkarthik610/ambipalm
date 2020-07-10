@@ -52,6 +52,7 @@ import { AppRoutes } from './app.routing';
 import { SwiperModule, SwiperConfigInterface,
   SWIPER_CONFIG } from 'ngx-swiper-wrapper';
   import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+  import { GoogleMapsModule } from '@angular/google-maps';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -95,6 +96,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatTooltipModule,
     MatNativeDateModule,
     SwiperModule,
+    GoogleMapsModule
     
   ]
 
@@ -117,7 +119,8 @@ export class MaterialModule {}
         SidebarModule,
         NavbarModule,
         FooterModule,
-        FixedpluginModule
+        FixedpluginModule,
+        
     ],
     declarations: [
         AppComponent,

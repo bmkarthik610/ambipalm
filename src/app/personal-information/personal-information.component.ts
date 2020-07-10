@@ -29,6 +29,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class PersonalInformationComponent implements OnInit, OnChanges {
 
+
   @ViewChild('addresstext') addresstext: any;
   @Input() adressType: string;
   @Output() setAddress: EventEmitter<any> = new EventEmitter();
@@ -87,11 +88,12 @@ export class PersonalInformationComponent implements OnInit, OnChanges {
         lastName: [null, Validators.required],
         bloodgroup: [null, Validators.required],
         email:[null,[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
-      gender:["Male",[]],
+       gender:["Male",[]],
         phoneNumber: [null, [Validators.required]],
         perminentAddress:[null,[Validators.required]],
         presentAddress:[null,[Validators.required]],
         idProofNumber:[null,Validators.required],
+        age:[null]
        });
         // Code for the Validator
         const $validator = $('.card-wizard form').validate({
@@ -174,24 +176,7 @@ export class PersonalInformationComponent implements OnInit, OnChanges {
             reader.readAsDataURL(input[0].files[0]);
         }
     }
-//     ngAfterViewInit() {
-//       this.getPlaceAutocomplete();
-//   }
 
-//   private getPlaceAutocomplete() {
-//       const autocomplete = new google.maps.places.Autocomplete(this.addresstext.nativeElement,
-//           {
-//               componentRestrictions: { country: 'US' },
-//               types: [this.adressType]  // 'establishment' / 'address' / 'geocode'
-//           });
-//       google.maps.event.addListener(autocomplete, 'place_changed', () => {
-//           const place = autocomplete.getPlace();
-//           this.invokeEvent(place);
-//       });
-//   }
-//   invokeEvent(place: Object) {
-//     this.setAddress.emit(place);
-// }
   selectInnerTab(data)
   {
       if(data == 'pitab')
@@ -204,5 +189,15 @@ export class PersonalInformationComponent implements OnInit, OnChanges {
 this.idproof =true;
 this.pitab =false;
       }
+  }
+
+
+  getPresentAddress(place: google.maps.places.PlaceResult) {
+    this.type.patchValue({ 'presentAddress':place.formatted_address })
+  }
+  getPerminentAddress(place :google.maps.places.PlaceResult)
+  {
+    // console.log(place.formatted_address);
+    this.type.patchValue({ 'perminentAddress':place.formatted_address })
   }
 }

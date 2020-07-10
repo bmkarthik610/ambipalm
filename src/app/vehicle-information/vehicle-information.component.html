@@ -1,4 +1,4 @@
-<form [formGroup]="companyInformation" action="" method="">
+<form [formGroup]="vehicleInformation" action="" method="">
                  
   <div class="tab-pane " id="personalinformationinner" *ngIf="pitab">
   <div class="row justify-content-center">
@@ -59,27 +59,48 @@
           
           placeholder="Owner Name"
           formControlName="ownerName">
-        </mat-form-field>
+       </mat-form-field>
 
-        <ng-multiselect-dropdown #multiSelect
-        [placeholder]="'Select City'" 
-        [data]="data" 
-        formControlName="city"
-        [settings]="settings"
-        [disabled]="false"
-        (onFilterChange)="onFilterChange($event)"
-        (onDropDownClose)="onDropDownClose($event)"
-        (onSelect)="onItemSelect($event)" 
-        (onDeSelect)="onDeSelect($event)"
-        (onSelectAll)="onSelectAll($event)"
-        (onDeSelectAll)="onDeSelectAll($event)">
-      </ng-multiselect-dropdown>
+
+     
+
+
+      
        
       </div>
+      <div class="row">
+        <div class="col-md-12">&nbsp;</div>
+        <div class="col-md-11 ">
+      <ng-multiselect-dropdown
+      [placeholder]="'Default Features'"
+      [settings]="dropdownSettings"
+      [data]="defaultFeaturesList"
+      formControlName="sdfeatures"
+     
+      (onSelect)="onItemSelect($event)"
+      (onSelectAll)="onSelectAll($event)"  [required]='requiredField' [ngClass]='setClass()'
+      >
+      </ng-multiselect-dropdown></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">&nbsp;</div>
+      <div class="col-md-11 ">
+    <ng-multiselect-dropdown
+    [placeholder]="'Optional Features'"
+    [settings]="dropdownSettings"
+    [data]="optionalFeaturesList"
+    formControlName="sofeatures"
+   
+    (onSelect)="onItemSelect($event)"
+    (onSelectAll)="onSelectAll($event)"  [required]='requiredField' [ngClass]='setClass()'
+    >
+    </ng-multiselect-dropdown></div>
+  </div>
    
  
     </div>
   </div>
+
 </div>
 <div class="tab-pane" id="idproofs" *ngIf="idproof">
   <div class="card-body  col-md-6 text-center ml-auto mr-auto">
@@ -99,7 +120,7 @@
 
  
    <div class="row">
-  
+  <div class="col-md-12"> &</div>
     <div class="col-md-3">
     </div>
      <div class="col-md-3">
@@ -114,5 +135,6 @@
       </div>
         </div>
        
-   
+       
 </form> 
+   

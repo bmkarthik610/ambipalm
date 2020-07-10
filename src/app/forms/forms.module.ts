@@ -23,6 +23,7 @@ import { DriverInformationComponent } from '../driver-information/driver-informa
 import { AmbulanceTypeComponent } from '../ambulance-type/ambulance-type.component';
 import { TestComponent } from './test/test.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { AutocompleteComponent } from './google-places/google-places.component';
 
  
 
@@ -59,6 +60,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
       TermsConditionsComponent,
       DriverInformationComponent,
       AmbulanceTypeComponent,
+      AutocompleteComponent,
       TestComponent
        
   ],

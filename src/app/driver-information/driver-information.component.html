@@ -126,14 +126,8 @@
               <i class="fa fa-address-book" aria-hidden="true"></i>
             </span>
           </div>
-          <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(driverInformation, 'perminentAddress')">
-            <input type="text"
-            name="perminentAddress"
-            matInput
-            
-            placeholder="Perminent Address"
-            formControlName="perminentAddress">
-          </mat-form-field>
+          <app-google-autocomplete (setAddress)="getPerminentAddress($event)" class="col-md-10" 
+          placeHolder="Perminent Address" addressText="{{ fromAddress }}"></app-google-autocomplete>
          
         </div>
         <div class="input-group form-control-lg">
@@ -142,14 +136,8 @@
               <i class="fa fa-address-book" aria-hidden="true"></i>
             </span>
           </div>
-          <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(driverInformation, 'presentAddress')">
-            <input type="text"
-            name="presentAddress"
-            matInput
-            
-            placeholder="Present Address"
-            formControlName="presentAddress">
-          </mat-form-field>
+          <app-google-autocomplete (setAddress)="getPresentAddress($event)" class="col-md-10"
+        placeHolder="Present Address" addressText="{{ fromAddress }}"></app-google-autocomplete>
          
         </div>
         <div class="input-group form-control-lg">

@@ -85,14 +85,16 @@
             <i class="fa fa-address-book" aria-hidden="true"></i>
           </span>
         </div>
-        <mat-form-field class="example-full-width has-label" >
+        <app-google-autocomplete (setAddress)="getAddress($event)" class="col-md-10"
+        placeHolder="Address" addressText="{{ fromAddress }}"></app-google-autocomplete>
+        <!-- <mat-form-field class="example-full-width has-label" >
           <input type="text"
           name="Address"
           matInput
           
           placeholder="Address"
           formControlName="Address">
-        </mat-form-field>
+        </mat-form-field> -->
        
       </div>
    

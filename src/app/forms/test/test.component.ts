@@ -1,26 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  EventEmitter,
+  Output,
+  OnInit,
+  AfterViewInit,
+  Input,
+  ElementRef,
+} from '@angular/core';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export class TestComponent implements OnInit {
+
+export class TestComponent {
+
 
   dropdownList = [];
   selectedItems = [];
-  dropdownSettings:IDropdownSettings;
-  form: FormGroup;
-
-  // ngOnInit() {
+  dropdownSettings :IDropdownSettings= {};
 
   ngOnInit() {
-    this.form = new FormGroup({
-      name: new FormControl("", Validators.required)
-    });
-
+    this.dropdownSettings = {
+      singleSelection: false,
+      idField: 'item_id',
+      textField: 'item_text',
+      selectAllText: 'Select All',
+      unSelectAllText: 'UnSelect All',
+      itemsShowLimit: 3,
+      allowSearchFilter: true
+    };
     this.dropdownList = [
       { item_id: 1, item_text: 'Mumbai' },
       { item_id: 2, item_text: 'Bangaluru' },
@@ -32,17 +44,7 @@ export class TestComponent implements OnInit {
       { item_id: 3, item_text: 'Pune' },
       { item_id: 4, item_text: 'Navsari' }
     ];
-
-    this.dropdownSettings = {
-      singleSelection: false,
-      idField: 'item_id',
-      textField: 'item_text',
-      selectAllText: 'Select All',
-      unSelectAllText: 'Unselect All',
-      itemsShowLimit: 3,
-      
-   }
-   
+  
   }
   onItemSelect(item: any) {
     console.log(item);
@@ -51,3 +53,5 @@ export class TestComponent implements OnInit {
     console.log(items);
   }
 }
+
+
