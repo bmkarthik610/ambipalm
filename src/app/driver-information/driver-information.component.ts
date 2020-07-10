@@ -61,6 +61,8 @@ export class DriverInformationComponent implements OnInit, OnChanges, AfterViewI
       'has-feedback': this.isFieldValid(form, field)
     };
   }
+
+  
     ngOnInit() {
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
 
@@ -72,7 +74,7 @@ export class DriverInformationComponent implements OnInit, OnChanges, AfterViewI
         lastName: [null, Validators.required],
         bloodgroup: [null, Validators.required],
         email:[null,[Validators.required,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
-      gender:["Male",[]],
+        gender:["Male",[]],
         phoneNumber: [null, [Validators.required]],
         perminentAddress:[null,[Validators.required]],
         presentAddress:[null,[Validators.required]],

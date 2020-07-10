@@ -1,6 +1,7 @@
-<form [formGroup]="vehicleInformation" action="" method="">
+
                  
   <div class="tab-pane " id="personalinformationinner" *ngIf="pitab">
+    <form [formGroup]="vehicleInformation" action="" method="">
   <div class="row justify-content-center">
     <div class="col-sm-4">
       <div class="picture-container">
@@ -68,38 +69,64 @@
       
        
       </div>
-      <div class="row">
-        <div class="col-md-12">&nbsp;</div>
-        <div class="col-md-11 ">
-      <ng-multiselect-dropdown
+        
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-address-book" aria-hidden="true"></i>
+          </span>
+        </div>
+        <ng-multiselect-dropdown
       [placeholder]="'Default Features'"
       [settings]="dropdownSettings"
       [data]="defaultFeaturesList"
       formControlName="sdfeatures"
-     
+      class="form-group"
       (onSelect)="onItemSelect($event)"
       (onSelectAll)="onSelectAll($event)"  [required]='requiredField' [ngClass]='setClass()'
       >
-      </ng-multiselect-dropdown></div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">&nbsp;</div>
-      <div class="col-md-11 ">
-    <ng-multiselect-dropdown
-    [placeholder]="'Optional Features'"
-    [settings]="dropdownSettings"
-    [data]="optionalFeaturesList"
-    formControlName="sofeatures"
+      </ng-multiselect-dropdown>
+
+
+     
+
+
+      
+       
+      </div>
+      <div class="input-group form-control-lg">
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <i class="fa fa-address-book" aria-hidden="true"></i>
+          </span>
+        </div>
+        <ng-multiselect-dropdown
+        [placeholder]="'Optional Features'"
+        [settings]="dropdownSettings"
+        [data]="optionalFeaturesList"
+        formControlName="sofeatures"
+        class="form-group"
+        (onSelect)="onItemSelect($event)"
+        (onSelectAll)="onSelectAll($event)"  [required]='requiredField' [ngClass]='setClass()'
+        >
+        </ng-multiselect-dropdown>
+
+
+     
+
+
+      
+       
+      </div>
    
-    (onSelect)="onItemSelect($event)"
-    (onSelectAll)="onSelectAll($event)"  [required]='requiredField' [ngClass]='setClass()'
-    >
-    </ng-multiselect-dropdown></div>
+   
+  <div class="text-right mt-3">
+    <input type="submit" class="btn btn-next btn-fill btn-rose btn-wd" value="Submit">
   </div>
-   
  
     </div>
   </div>
+</form>
 
 </div>
 <div class="tab-pane" id="idproofs" *ngIf="idproof">
@@ -136,5 +163,5 @@
         </div>
        
        
-</form> 
+
    

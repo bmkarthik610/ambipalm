@@ -1,22 +1,22 @@
-<form [formGroup]="type" action="" method="">
+
                  
   <div class="tab-pane " id="personalinformationinner" *ngIf="pitab">
- 
+    <form [formGroup]="type" action="" method="" (submit)="submitEmployee()">
   <div class="row justify-content-center">
     <div class="col-sm-4">
       <div class="picture-container">
         <div class="picture">
-          <img src="./assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
+          <img src="./../../assets/img/Profile picture.png" class="picture-src" id="wizardPicturePreview" title="" />
           <input type="file" id="wizard-picture">
         </div>
         <h6 class="description">Choose Picture</h6>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-8">
       <div class="input-group form-control-lg">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            <i class="material-icons">face</i>
+            <img src="./../../assets/img/Name icon.png" width="20" height="20" >
           </span>
         </div>
         <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'firstName')">
@@ -31,7 +31,7 @@
       <div class="input-group form-control-lg">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            <i class="material-icons">record_voice_over</i>
+            <img src="./../../assets/img/Name icon.png" width="20" height="20" >
           </span>
         </div>
         <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'lastName')">
@@ -39,7 +39,7 @@
           name="lastname"
           matInput
           
-          placeholder="last Name"
+          placeholder="Last Name"
           formControlName="lastName">
         </mat-form-field>
      
@@ -47,7 +47,7 @@
       <div class="input-group form-control-lg">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            <i class="material-icons">record_voice_over</i>
+            <img src="./../../assets/img/age.png" width="20" height="20" >
           </span>
         </div>
         <mat-form-field>
@@ -59,23 +59,23 @@
       </mat-form-field>
      
       </div>
-      <div class="input-group form-control-lg">
-        <div class="input-group-prepend">
+      <div class="input-group form-control-lg mt-5">
+        <div class="input-group-prepend col-md-1">
           <span class="input-group-text">
-            <!-- <i class="material-icons">record_voice_over</i> -->
+           
           </span>
         </div>
         
-        <mat-radio-group aria-label="Select an option" formControlName="gender">
+        <mat-radio-group aria-label="Select an option" formControlName="gender" class="col-md-11">
           <mat-radio-button value="Male" >Male</mat-radio-button>&nbsp;
           <mat-radio-button value="Female"> Female</mat-radio-button>
         </mat-radio-group>
      
       </div>
-      <div class="input-group form-control-lg">
+      <div class="input-group form-control-lg ">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <img src="./../../assets/img/Email icon.png" width="20" height="20" >
           </span>
         </div>
         <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'email')">
@@ -91,7 +91,7 @@
       <div class="input-group form-control-lg">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <img src="./../../assets/img/blood group.png" width="20" height="20" >
           </span>
         </div>
         <mat-form-field>
@@ -108,11 +108,11 @@
       <div class="input-group form-control-lg">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            <i class="fa fa-phone-square" aria-hidden="true"></i>
+            <img src="./../../assets/img/Call icon.png" width="20" height="20" >
           </span>
         </div>
         <mat-form-field class="example-full-width has-label" [ngClass]="displayFieldCss(type, 'phoneNumber')">
-          <input type="number"
+          <input type="text"
           name="phoneNumber"
           matInput
           
@@ -124,22 +124,22 @@
       <div class="input-group form-control-lg">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            <i class="fa fa-address-book" aria-hidden="true"></i>
+            <img src="./../../assets/img/Address icon.png" width="20" height="20" >
           </span>
         </div>
-        <app-google-autocomplete (setAddress)="getPerminentAddress($event)" class="col-md-10" 
+        <app-google-autocomplete (setAddress)="getPerminentAddress($event)" class="col-md-10 p-0 " 
         placeHolder="Perminent Address" addressText="{{ fromAddress }}"></app-google-autocomplete>
        
       </div>
       <div class="input-group form-control-lg">
         <div class="input-group-prepend">
           <span class="input-group-text">
-            <i class="fa fa-address-book" aria-hidden="true"></i>
+            <img src="./../../assets/img/Address icon.png" width="20" height="20" >
           </span>
         </div>
 
         
-        <app-google-autocomplete (setAddress)="getPresentAddress($event)" class="col-md-10"
+        <app-google-autocomplete (setAddress)="getPresentAddress($event)" class="col-md-10 p-0"
         placeHolder="Present Address" addressText="{{ fromAddress }}"></app-google-autocomplete>
       </div>
       <div class="input-group form-control-lg">
@@ -158,8 +158,14 @@
         </mat-form-field>
        
       </div>
+      
+      <div class="text-right mt-3">
+        <input type="submit" class="btn btn-next btn-fill btn-rose btn-wd" value="Submit">
+      </div>
+     
     </div>
   </div>
+    </form>
 </div>
 <div class="tab-pane" id="idproofs" *ngIf="idproof">
   <div class="card-body  col-md-6 text-center ml-auto mr-auto">
@@ -214,4 +220,3 @@
        Other Users
         </a>
       </li> -->
-</form> 
