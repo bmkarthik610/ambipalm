@@ -1,132 +1,43 @@
-
+<div class="row">
+  <div class="col-md-6 mr-auto ml-auto">
+    <div class="card" (click)="addVehicle()">
+        <div class="card-body text-center">
+          <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
+          <p>Add Ambulance</p>
+        </div>
+    </div>
+    <div *ngIf="!addVehicleEnable">
+  <legend class="text-center"> Vehicle details</legend>
+  <div class="table-responsive">
+    <table class="table  table-shopping">
+            <thead>
+                <tr>
+                  <th class="text-center">{{ tableData1.headerRow[0] }}</th>
+                  <th>{{ tableData1.headerRow[1] }}</th>
+                  <th>{{ tableData1.headerRow[2] }}</th>
+                 
+                </tr>
+            </thead>
+          <tbody>
+              <tr *ngFor="let row of tableData1.dataRows">
+                  <td class="text-center">{{row[0]}}</td>
+                  <td>      <div class="img-container">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                 
+                </div></td>
+                  <td>{{row[2]}}</td>
+               
+              
+          </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+  </div>
+<div class="row" *ngIf="addVehicleEnable">
                  
   <div class="tab-pane " id="personalinformationinner" *ngIf="pitab">
-    <form [formGroup]="vehicleInformation" action="" method="">
-  <div class="row justify-content-center">
-    <div class="col-sm-4">
-      <div class="picture-container">
-        <div class="picture">
-          <img src="./assets/img/default-avatar.png" class="picture-src" id="wizardPicturePreview" title="" />
-          <input type="file" id="wizard-picture">
-        </div>
-        <h6 class="description">Choose Picture</h6>
-      </div>
-    </div>
-    <div class="col-sm-6">
-    <div class="input-group form-control-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text">
-            <i class="fa fa-building" aria-hidden="true"></i>
-          </span>
-        </div>
-        <mat-radio-group aria-label="Select an option" formControlName="gender">
-          <mat-radio-button value="Male" >ALS</mat-radio-button>&nbsp;
-          <mat-radio-button value="Female"> BLS</mat-radio-button>&nbsp;
-          <mat-radio-button value="Female"> Others</mat-radio-button>
-        </mat-radio-group>
-      </div>
-       
-      <div class="input-group form-control-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text">
-            <i class="material-icons">record_voice_over</i>
-          </span>
-        </div>
-        <mat-form-field class="example-full-width has-label" >
-          <input type="vehicleNumber"
-          name="date"
-          matInput
-          
-          placeholder="Vehicle Number"
-          formControlName="vehicleNumber">
-        </mat-form-field>
-     
-      </div>
-
-
-  
-     
-  
-      <div class="input-group form-control-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text">
-            <i class="fa fa-address-book" aria-hidden="true"></i>
-          </span>
-        </div>
-        <mat-form-field class="example-full-width has-label" >
-          <input type="text"
-          name="ownerName"
-          matInput
-          
-          placeholder="Owner Name"
-          formControlName="ownerName">
-       </mat-form-field>
-
-
-     
-
-
-      
-       
-      </div>
-        
-      <div class="input-group form-control-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text">
-            <i class="fa fa-address-book" aria-hidden="true"></i>
-          </span>
-        </div>
-        <ng-multiselect-dropdown
-      [placeholder]="'Default Features'"
-      [settings]="dropdownSettings"
-      [data]="defaultFeaturesList"
-      formControlName="sdfeatures"
-      class="form-group"
-      (onSelect)="onItemSelect($event)"
-      (onSelectAll)="onSelectAll($event)"  [required]='requiredField' [ngClass]='setClass()'
-      >
-      </ng-multiselect-dropdown>
-
-
-     
-
-
-      
-       
-      </div>
-      <div class="input-group form-control-lg">
-        <div class="input-group-prepend">
-          <span class="input-group-text">
-            <i class="fa fa-address-book" aria-hidden="true"></i>
-          </span>
-        </div>
-        <ng-multiselect-dropdown
-        [placeholder]="'Optional Features'"
-        [settings]="dropdownSettings"
-        [data]="optionalFeaturesList"
-        formControlName="sofeatures"
-        class="form-group"
-        (onSelect)="onItemSelect($event)"
-        (onSelectAll)="onSelectAll($event)"  [required]='requiredField' [ngClass]='setClass()'
-        >
-        </ng-multiselect-dropdown>
-
-
-     
-
-
-      
-       
-      </div>
-   
-   
-  <div class="text-right mt-3">
-    <input type="submit" class="btn btn-next btn-fill btn-rose btn-wd" value="Submit">
-  </div>
- 
-    </div>
-  </div>
-</form>
+<app-add-ambulance (valueChange)="addVehicleEnable = false"></app-add-ambulance>
 
 </div>
 <div class="tab-pane" id="idproofs" *ngIf="idproof">
@@ -142,11 +53,11 @@
   </div>
 
     <div class="row mt-2">
-      <div class="col-md-4 col-sm-4">
+      <div class="col-md-4 col-md-4">
           <legend>Registration Certificate</legend>
     
       </div>
-      <div class="col-md-6 col-sm-6">
+      <div class="col-md-6 col-md-6">
         <div class="row">
    <input type="file" [(ngModel)]="filetext" (click)="enable  = true" />
   </div>
@@ -159,11 +70,11 @@
   </div>  
   
   <div class="row mt-5">
-    <div class="col-md-4 col-sm-4">
+    <div class="col-md-4 col-md-4">
         <legend>Insurance Certificate</legend>
   
     </div>
-    <div class="col-md-6 col-sm-6">
+    <div class="col-md-6 col-md-6">
       <div class="row">
  <input type="file" [(ngModel)]="filetextback" (click)="enable  = true" />
 </div>
@@ -185,10 +96,10 @@
 </div>
 </div>
 
-
+</div>
  
-   <div class="row">
-  <div class="col-md-12"> &</div>
+   <div class="row" *ngIf="addVehicleEnable">
+
     <div class="col-md-3">
     </div>
      <div class="col-md-3">

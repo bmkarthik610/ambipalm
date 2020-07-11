@@ -128,7 +128,7 @@
             <img src="./../../assets/img/Address icon.png" width="20" height="20" >
           </span>
         </div>
-        <app-google-autocomplete (setAddress)="getPerminentAddress($event)" class="col-md-10 p-0 " 
+        <app-google-autocomplete (setAddress)="getPerminentAddress($event)" class="col-md-10 p-0 mr-1" 
         placeHolder="Perminent Address" addressText="{{ fromAddress }}"></app-google-autocomplete>
        
       </div>
@@ -140,7 +140,7 @@
         </div>
 
         
-        <app-google-autocomplete (setAddress)="getPresentAddress($event)" class="col-md-10 p-0"
+        <app-google-autocomplete (setAddress)="getPresentAddress($event)" class="col-md-10 p-0" 
         placeHolder="Present Address" addressText="{{ fromAddress }}"></app-google-autocomplete>
       </div>
       <div class="input-group form-control-lg">
@@ -187,7 +187,7 @@
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="row">
-   <input type="file" [(ngModel)]="filetext" (click)="enable  = true" />
+   <input type="file" [(ngModel)]="filetext"  (click)="enable  = true" />
   </div>
   <div class="row" *ngIf="filetext">
    <a href="#">{{filetext}} </a> 
@@ -213,6 +213,24 @@
  <button class="btn btn-danger" (click)="filetextback = ''">remove</button> </div>
   </div>
   
+</div> 
+
+<div class="row mt-5">
+  <div class="col-md-4 col-sm-4">
+      <legend>PAN Card</legend>
+
+  </div>
+  <div class="col-md-6 col-sm-6">
+    <div class="row">
+<input type="file" [(ngModel)]="pancard" (click)="enable  = true" />
+</div>
+<div class="row" *ngIf="pancard">
+<div>
+<a href="#" class="mt-2">{{pancard}} </a> </div>
+<button class="btn btn-rose" >Upload</button>
+<button class="btn btn-danger" (click)="pancard = ''">remove</button> </div>
+</div>
+
 </div> 
 <!-- <button mat-raised-button class="btn  btn-round col-md-12" [ngClass]="{'btn-white' : isPersonalInformation, 'btn-rose': !isPersonalInformation}"   >
 <div class="row">

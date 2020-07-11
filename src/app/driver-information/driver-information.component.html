@@ -1,9 +1,45 @@
-
+<div class="row">
+  <div class="col-md-6 mr-auto ml-auto">
+    <div class="card" (click)="addVehicle">
+        <div class="card-body text-center">
+          <i class="fa fa-plus-circle fa-5x" aria-hidden="true"></i>
+          <p>Add Driver</p>
+        </div>
+    </div>
+  <div class="row" *ngIf="addVehicleEnable">
+  <legend class="text-center"> Driver Details</legend>
+  <div class="table-responsive">
+    <table class="table  table-shopping">
+            <thead>
+                <tr>
+                  <th class="text-center">{{ tableData1.headerRow[0] }}</th>
+                  <th>{{ tableData1.headerRow[1] }}</th>
+                  <th>{{ tableData1.headerRow[2] }}</th>
+                 
+                </tr>
+            </thead>
+          <tbody>
+              <tr *ngFor="let row of tableData1.dataRows">
+                  <td class="text-center">{{row[0]}}</td>
+                  <td>      <div class="img-container">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                 
+                </div></td>
+                  <td>{{row[2]}}</td>
+               
+              
+          </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+  </div>
                  
   <div class="tab-pane " id="personalinformationinner" *ngIf="pitab">
     <form [formGroup]="driverInformation" action="" method="" (submit)="submitEmployee()">
   <div class="row justify-content-center">
     <div class="col-sm-4">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
       <div class="picture-container">
         <div class="picture">
           <img src="./../../assets/img/Profile picture.png" class="picture-src" id="wizardPicturePreview" title="" />
@@ -198,6 +234,23 @@
  <button class="btn btn-danger" (click)="filetextback = ''">remove</button> </div>
   </div>
   
+</div> 
+<div class="row mt-5">
+  <div class="col-md-4 col-sm-4">
+      <legend>PAN Card</legend>
+
+  </div>
+  <div class="col-md-6 col-sm-6">
+    <div class="row">
+<input type="file" [(ngModel)]="pancard" (click)="enable  = true" />
+</div>
+<div class="row" *ngIf="pancard">
+<div>
+<a href="#" class="mt-2">{{pancard}} </a> </div>
+<button class="btn btn-rose" >Upload</button>
+<button class="btn btn-danger" (click)="pancard = ''">remove</button> </div>
+</div>
+
 </div> 
 
 <div class="row mt-5">

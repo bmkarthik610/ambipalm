@@ -45,6 +45,17 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ["./vehicle-information.component.css"],
 })
 export class VehicleInformationComponent implements OnInit, OnChanges {
+  
+tableData1 = {
+    headerRow: [ '#', 'Profile Pic', 'Vehicle Number'],
+    dataRows: [
+        ['1', 'Andrew Mike', 'Ap40c5', '2013', '99,225', ''],
+        ['2', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
+        ['2', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
+        ['2', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
+        ['2', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
+    ]
+ };
   cities = [
     { value: "paris-0", viewValue: "Paris" },
     { value: "miami-1", viewValue: "Miami" },
@@ -78,6 +89,7 @@ export class VehicleInformationComponent implements OnInit, OnChanges {
   vehicleInformation: FormGroup;
   requiredField: boolean;
   optionalFeaturesList: { item_id: string; item_text: string; }[];
+  addVehicleEnable: boolean;
   constructor(private formBuilder: FormBuilder) {}
 
   // isFieldValid(form: FormGroup, field: string) {
@@ -91,44 +103,7 @@ export class VehicleInformationComponent implements OnInit, OnChanges {
   //   };
   // }
   ngOnInit() {
-    this.dropdownSettings = {
-      singleSelection: false,
-      idField: 'item_id',
-      textField: "item_text",
-      selectAllText: "Select All",
-      unSelectAllText: "UnSelect All",
-      itemsShowLimit: 3,
-      allowSearchFilter: true,
-      
-    };
-    this.defaultFeaturesList = [
-      { item_id: 'AED', item_text: "AED" },
-      { item_id: 'Blood', item_text: "Blood" },
     
-    ];
-    this.optionalFeaturesList = [
-      { item_id: 'AED', item_text: "AED" },
-      { item_id: 'Blood', item_text: "Blood" },
-    
-    ];
-    this.selectedItems = [
-      { item_id: 'AED', item_text: "AED" },
-      
-    ];
-
-    this.vehicleInformation = this.formBuilder.group({
-      vehicleNumber: [null, [Validators.required]],
-      ownerName: [null, [Validators.required]],
-
-      gender: ["", null],
-      city: ["", null],
-      sofeatures: [ [
-        
-      ]],
-      sdfeatures: [ [
-        
-      ]],
-    });
 
     // Code for the Validator
     // const $validator = $('.card-wizard form').validate({
@@ -227,12 +202,10 @@ export class VehicleInformationComponent implements OnInit, OnChanges {
   onSelectAll(items: any) {
     console.log(items);
   }
-  setStatus() {
-    (this.selectedItems.length > 0) ? this.requiredField = true : this.requiredField = false;
-  }
-  setClass() {
-    this.setStatus();
-    if (this.selectedItems.length > 0) { return 'validField' }
-    else { return 'invalidField' }
+
+
+  addVehicle()
+  {
+    this.addVehicleEnable  = true;
   }
 }
