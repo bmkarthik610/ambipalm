@@ -46,16 +46,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class VehicleInformationComponent implements OnInit, OnChanges {
   
-tableData1 = {
-    headerRow: [ '#', 'Profile Pic', 'Vehicle Number'],
-    dataRows: [
-        ['1', 'Andrew Mike', 'Ap40c5', '2013', '99,225', ''],
-        ['2', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
-        ['2', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
-        ['2', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
-        ['2', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
-    ]
- };
+  VehicleDetails = [{'vehicleNumber':"apc534",'src':'',type:"BLS"},
+{'vehicleNumber':"apc535",'src':'',type:"ALS"},
+{'vehicleNumber':"apc536",'src':'',type:"ALS"},
+{'vehicleNumber':"apc537",'src':'',type:"BLS"}]
   cities = [
     { value: "paris-0", viewValue: "Paris" },
     { value: "miami-1", viewValue: "Miami" },

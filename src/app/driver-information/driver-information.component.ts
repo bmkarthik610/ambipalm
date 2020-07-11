@@ -28,16 +28,12 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class DriverInformationComponent implements OnInit, OnChanges, AfterViewInit {
 
-  tableData1 = {
-    headerRow: [ '#', 'Profile Pic', 'Vehicle Number'],
-    dataRows: [
-        ['1', 'Andrew Mike', 'Ap40c5', '2013', '99,225', ''],
-        ['2', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
-        ['3', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
-        ['4', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
-        ['5', 'John Doe', 'Ap40c5', '2012', '89,241', 'btn-round'],
-    ]
- };
+  
+  driverDetails = [{'name':"manikanta",'src':'',type:"BLS"},
+{'name':"karthik",'src':'',type:"ALS"},
+{'name':"praveen",'src':'',type:"ALS"},
+{'name':"pavan",'src':'',type:"BLS"}];
+addDriverEnable: boolean =false;
   ageList = [
     {value: 1, viewValue: 1},
     {value: 2, viewValue: 2},
@@ -290,5 +286,10 @@ this.pitab =false;
   {
     // console.log(place.formatted_address);
     this.driverInformation.patchValue({ 'perminentAddress':place.formatted_address })
+  }
+  
+  addDriver()
+  {
+    this.addDriverEnable  = true;
   }
 }
