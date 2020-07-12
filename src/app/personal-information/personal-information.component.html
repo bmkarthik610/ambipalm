@@ -5,13 +5,21 @@
   <div class="row justify-content-center">
     <div class="col-sm-4">
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-      <div class="picture-container">
-        <div class="picture">
-          <img src="./../../assets/img/Profile picture.png" class="picture-src" id="wizardPicturePreview" title="" />
-          <input type="file" id="wizard-picture">
+      <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+        <div class="fileinput-new thumbnail img-circle">
+            <img src="./../../assets/img/Profile picture.png" alt="...">
         </div>
-        <h6 class="description">Choose Picture</h6>
-      </div>
+        <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
+        <div>
+            <span class="btn btn-round btn-rose btn-file">
+                <span class="fileinput-new">Add Photo</span>
+                <span class="fileinput-exists">Change</span>
+                <input type="file" name="..." />
+            </span>
+            <br />
+            <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+        </div>
+    </div>
     </div>
     <div class="col-sm-8">
       <div class="input-group form-control-lg">
